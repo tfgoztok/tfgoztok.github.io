@@ -1,16 +1,13 @@
 "use strict";
 
-// 1a) Function to compute sum of squares using functional programming
 const computeSumOfSquares = (numbers) => {
     return numbers.reduce((sum, num) => sum + num * num, 0);
 };
 
-// 1b) Function to print odd numbers
 function printOddNumbersOnly(numbers) {
     numbers.filter(num => num % 2 !== 0).forEach(num => console.log(num));
 }
 
-// 1c) Function to print Fibonacci sequence
 const printFibo = (n, a, b) => {
     if (n <= 0) return;
     
@@ -24,11 +21,9 @@ const printFibo = (n, a, b) => {
     console.log(fibo.join(", "));
 };
 
-// 2. Destructuring assignment
 let user = { name: "John", years: 30 };
 let { name, years: age, isAdmin = false } = user;
 
-// 3. Library books functions
 let libraryBooks = [
     { title: "The Road Ahead", author: "Bill Gates", ID: 1235 },
     { title: "Walter Isaacson", author: "Steve Jobs", ID: 4268 },
@@ -36,9 +31,7 @@ let libraryBooks = [
     { title: "Mockingjay: The Final Book of The Hunger Games", author: "Suzanne Collins", ID: 3257 }
 ];
 
-// Add a new book
 const addBook = (title, author, ID) => {
-    // Check if book exitst
     if (libraryBooks.some(book => book.ID === ID)) {
         return null;
     }
@@ -48,19 +41,16 @@ const addBook = (title, author, ID) => {
     return newBook;
 };
 
-// Get all book titles sorted 
 const getTitles = () => {
     return libraryBooks.map(book => book.title).sort();
 };
 
-// Find books with the  title keyword
 const findBooks = (keyword) => {
     return libraryBooks
         .filter(book => book.title.toLowerCase().includes(keyword.toLowerCase()))
         .sort((a, b) => a.ID - b.ID);
 };
 
-// 4. Data management functions
 let data = [];
 
 export function get_items() {
