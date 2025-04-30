@@ -38,7 +38,7 @@ let libraryBooks = [
 
 // Add a new book
 const addBook = (title, author, ID) => {
-    // Check if book with same ID exists
+    // Check if book exitst
     if (libraryBooks.some(book => book.ID === ID)) {
         return null;
     }
@@ -48,12 +48,12 @@ const addBook = (title, author, ID) => {
     return newBook;
 };
 
-// Get all book titles sorted alphabetically
+// Get all book titles sorted 
 const getTitles = () => {
     return libraryBooks.map(book => book.title).sort();
 };
 
-// Find books by title keyword
+// Find books with the  title keyword
 const findBooks = (keyword) => {
     return libraryBooks
         .filter(book => book.title.toLowerCase().includes(keyword.toLowerCase()))
@@ -96,18 +96,18 @@ export function get_item_title_by_id(id) {
 }
 
 // Test cases
-console.log("Testing computeSumOfSquares:", computeSumOfSquares([1, 2, 3])); // Should output: 14
+console.log("Testing computeSumOfSquares:", computeSumOfSquares([1, 2, 3]));
 
 console.log("\nTesting printOddNumbersOnly:");
-printOddNumbersOnly([1, 2, 3, 4, 5, 6, 7, 8, 9]); // Should print: 1, 3, 5, 7, 9
+printOddNumbersOnly([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
 console.log("\nTesting printFibo:");
-printFibo(10, 0, 1); // Should print: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+printFibo(10, 0, 1);
 
 console.log("\nTesting destructuring:");
-console.log(name); // Should output: John
-console.log(age); // Should output: 30
-console.log(isAdmin); // Should output: false
+console.log(name);
+console.log(age);
+console.log(isAdmin);
 
 console.log("\nTesting library functions:");
 console.log("Adding new book:", addBook("New Book", "New Author", 9999));
