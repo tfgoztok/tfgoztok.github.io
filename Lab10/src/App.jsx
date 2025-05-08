@@ -10,7 +10,6 @@ function App() {
 
   const API_URL = 'https://67d17ef590e0670699ba5929.mockapi.io/books';
 
-  // Fetch books
   useEffect(() => {
     fetchBooks();
   }, []);
@@ -27,7 +26,6 @@ function App() {
     }
   };
 
-  // Add book
   const handleAddBook = async (e) => {
     e.preventDefault();
     if (!formData.title || !formData.author) return;
@@ -46,7 +44,6 @@ function App() {
     }
   };
 
-  // Update book
   const handleUpdateBook = async (e) => {
     e.preventDefault();
     if (!formData.title || !formData.author) return;
@@ -66,7 +63,6 @@ function App() {
     }
   };
 
-  // Delete book
   const handleDeleteBook = async (id) => {
     if (!window.confirm('Delete this book?')) return;
 
@@ -78,12 +74,10 @@ function App() {
     }
   };
 
-  // Handle form input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Start editing a book
   const startEdit = (book) => {
     setEditingBook(book);
     setFormData({ title: book.title, author: book.author });
@@ -96,7 +90,6 @@ function App() {
     <div className="app">
       <h1>Book Library</h1>
       
-      {/* Add/Edit Form */}
       <form onSubmit={editingBook ? handleUpdateBook : handleAddBook}>
         <input
           type="text"
@@ -125,7 +118,6 @@ function App() {
         )}
       </form>
 
-      {/* Book List */}
       <div className="books-grid">
         {books.map(book => (
           <div key={book.id} className="book-card">
